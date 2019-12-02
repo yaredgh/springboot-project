@@ -1,6 +1,6 @@
 package edu.mum.springboot.malti_modual.petclinicproject.modle;
 
-public class Person {
+public class Person extends BaseEntity {
     private String firstName;
     private String lastName;
 
