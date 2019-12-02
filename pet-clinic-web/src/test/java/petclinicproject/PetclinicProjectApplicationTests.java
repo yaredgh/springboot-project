@@ -1,4 +1,4 @@
-package edu.mum.springboot.malti_modual.petclinicproject;
+package petclinicproject;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
