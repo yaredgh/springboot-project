@@ -1,11 +1,12 @@
 package edu.mum.springboot.malti_modual.petclinicproject.service.map;
 
 import edu.mum.springboot.malti_modual.petclinicproject.modle.Pet;
-import edu.mum.springboot.malti_modual.petclinicproject.service.CrudService;
+import edu.mum.springboot.malti_modual.petclinicproject.service.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
-public class PetServiceMap extends AbstractMapService<Pet,Long> implements CrudService<Pet,Long> {
+@Service
+public class PetServiceMap extends AbstractMapService<Pet,Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
         return super.findAll();
@@ -33,6 +34,6 @@ public class PetServiceMap extends AbstractMapService<Pet,Long> implements CrudS
 
     @Override
     public Pet save(Pet object) {
-        return super.save(object.getId(),object);
+        return super.save(object);
     }
 }

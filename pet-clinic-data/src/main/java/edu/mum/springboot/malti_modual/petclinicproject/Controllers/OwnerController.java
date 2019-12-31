@@ -14,11 +14,15 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class OwnerController {
 
-   private  OwnerService ownerService;
+   private final  OwnerService ownerService;
+
+    public OwnerController(OwnerService ownerService) {
+        this.ownerService = ownerService;
+    }
 
     @RequestMapping({"owners","owners/index"})
-    public String listOfOwners(){
-
+    public String listOfOwners(Model model){
+       model.addAttribute("owners",ownerService.findAll());
         return "Owners/index";
 
     }

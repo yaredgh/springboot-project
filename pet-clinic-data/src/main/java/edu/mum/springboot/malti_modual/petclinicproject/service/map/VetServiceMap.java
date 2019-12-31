@@ -2,9 +2,10 @@ package edu.mum.springboot.malti_modual.petclinicproject.service.map;
 
 import edu.mum.springboot.malti_modual.petclinicproject.modle.Vet;
 import edu.mum.springboot.malti_modual.petclinicproject.service.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
@@ -34,6 +35,6 @@ public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetSe
 
     @Override
     public Vet save(Vet object) {
-        return super.save(object.getId(),object);
+        return super.save(object);
     }
 }
