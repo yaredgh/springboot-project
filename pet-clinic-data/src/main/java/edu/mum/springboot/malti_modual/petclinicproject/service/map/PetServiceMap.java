@@ -12,6 +12,11 @@ public class PetServiceMap extends AbstractMapService<Pet,Long> implements CrudS
     }
 
     @Override
+    public Pet findOne(Long id) {
+        return super.findOne(id);
+    }
+
+    @Override
     public void deleteById(Long id) {
         super.deleteById(id);
     }

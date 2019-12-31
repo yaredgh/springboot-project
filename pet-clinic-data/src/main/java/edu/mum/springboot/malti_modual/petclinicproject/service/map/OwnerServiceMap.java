@@ -1,11 +1,11 @@
 package edu.mum.springboot.malti_modual.petclinicproject.service.map;
 
 import edu.mum.springboot.malti_modual.petclinicproject.modle.Owner;
-import edu.mum.springboot.malti_modual.petclinicproject.service.CrudService;
+import edu.mum.springboot.malti_modual.petclinicproject.service.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements CrudService<Owner,Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
         return super.findAll();
@@ -29,5 +29,15 @@ public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements C
     @Override
     public Owner save(Owner object) {
         return super.save(object.getId(),object);
+    }
+
+    @Override
+    public Owner findOne(Long id) {
+        return super.findOne(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }

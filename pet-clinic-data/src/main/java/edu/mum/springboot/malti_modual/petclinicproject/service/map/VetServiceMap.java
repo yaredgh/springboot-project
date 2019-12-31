@@ -1,15 +1,21 @@
 package edu.mum.springboot.malti_modual.petclinicproject.service.map;
 
 import edu.mum.springboot.malti_modual.petclinicproject.modle.Vet;
-import edu.mum.springboot.malti_modual.petclinicproject.service.CrudService;
+import edu.mum.springboot.malti_modual.petclinicproject.service.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet,Long> implements CrudService<Vet,Long> {
+public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
     }
+
+    @Override
+    public Vet findOne(Long id) {
+        return super.findOne(id);
+    }
+
 
     @Override
     public void deleteById(Long id) {
