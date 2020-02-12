@@ -1,21 +1,22 @@
 package edu.mum.springboot.malti_modual.petclinicproject.service.map;
 
-import edu.mum.springboot.malti_modual.petclinicproject.modle.Pet;
-import edu.mum.springboot.malti_modual.petclinicproject.service.PetService;
+import edu.mum.springboot.malti_modual.petclinicproject.modle.Visit;
+import edu.mum.springboot.malti_modual.petclinicproject.service.VisitService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 @Service
 @Profile({"default", "map"})
-public class PetServiceMap extends AbstractMapService<Pet,Long> implements PetService {
+public class VisitServiceMap extends AbstractMapService<Visit,Long> implements VisitService {
+
     @Override
-    public Set<Pet> findAll() {
+    public Set<Visit> findAll() {
         return super.findAll();
     }
 
     @Override
-    public Pet findOne(Long id) {
+    public Visit findOne(Long id) {
         return super.findOne(id);
     }
 
@@ -25,17 +26,19 @@ public class PetServiceMap extends AbstractMapService<Pet,Long> implements PetSe
     }
 
     @Override
-    public void delete(Pet object) {
-        super.delete(object);
+    public void delete(Visit object) {
+        Visit visit = new Visit();
+         visit = super.findById(object.getId());
+         super.delete(visit);
     }
 
     @Override
-    public Pet findById(Long id) {
+    public Visit findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Pet save(Pet object) {
+    public Visit save(Visit object) {
         return super.save(object);
     }
 }
